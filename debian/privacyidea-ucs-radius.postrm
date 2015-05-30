@@ -12,6 +12,13 @@ if [ -f /usr/share/dbconfig-common/dpkg/postinst.pgsql  ]; then
 fi
 
 ucr unset privacyidea/radius/enable
+rm -f /etc/freeradius/sites-enabled/privacyidea
+ln -sf /etc/freeradius/sites-available/inner-tunnel /etc/freeradius/sites-enabled/
+ln -sf /etc/freeradius/sites-available/default /etc/freeradius/sites-enabled/
+
+# restore the users file
+mv /etc/freeradius/users.privacyidea /etc/freeradius/users || true
+#service freeradius restart
 
 #DEBHELPER#
 exit 0

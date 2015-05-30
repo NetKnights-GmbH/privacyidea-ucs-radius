@@ -32,6 +32,14 @@ fi
 
 mkdir -p /opt/privacyIDEA
 
+#
+# Fix the access rights to the dh file.
+# Otherwise FreeRADIUS will not start again, if
+# privacyIDEA RADIUS is removed
+#
+chown freerad /etc/freeradius/ssl/dh
+cp /etc/freeradius/users /etc/freeradius/users.privacyidea || true
+
 #DEBHELPER#
 
 db_stop

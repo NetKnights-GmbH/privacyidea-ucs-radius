@@ -33,3 +33,7 @@ Variables: ^privacyidea/radius/enable
 Type: subfile
 Multifile: etc/freeradius/users
 Subfile: etc/freeradius/users.d/10netknights-header
+
+Type: script
+Script: etc/freeradius/sites-enabled/link_privacyidea
+Variables: privacyidea/radius/enable

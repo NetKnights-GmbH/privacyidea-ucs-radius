@@ -10,18 +10,10 @@ privacyIDEA RADIUS konfigurieren Sie über UCR Variablen:
 <li><b>privacyidea/radius/url</b> beschreibt die URL, wo der privacyIDEA Server gefunden wird. Dies kann bspw. https://yourserver/privacyidea sein.
 </li>
 <li><b>privacyidea/radius/enable</b> setzen Sie diesen Wert auf "1", um OTP für RADIUS zu aktivieren.
+Dabei wird die Standard RADIUS-Konfiguration (in sites-enabled) deaktiviert.
 </li>
 </ul>
 </p>
-
-<p>
-Sie müssen die Standard-FreeRADIUS Site-Links deaktivieren:
-</p>
-<pre>
-rm /etc/freeradius/sites-enabled/default
-rm /etc/freeradius/sites-enabled/inner-tunnel
-ln -s /etc/freeradius/sites-available/privacyidea /etc/freeradius/sites-enabled/
-</pre>
 
 <p>
 <b>Bitte beachten Sie</b>:
