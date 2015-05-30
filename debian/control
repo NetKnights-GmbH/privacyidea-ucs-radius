@@ -1,0 +1,20 @@
+Source: privacyidea-ucs-radius
+Maintainer: NetKnights GmbH  <info@netknights.it>
+Section: admin
+Priority: optional
+Build-Depends: debhelper (>= 7.4.3)
+Standards-Version: 3.9.5
+
+Package: privacyidea-ucs-radius
+Architecture: all
+Depends: ${misc:Depends}, libwww-perl, libconfig-inifiles-perl, libdata-dump-perl, libtry-tiny-perl, freeradius,
+ libjson-perl
+Description: FreeRADIUS module for privacyIDEA, OTP authentication
+ privacyIDEA: identity, multifactor authentication, authorization.
+ privacyIDEA is an open solution for strong two-factor authentication.
+ privacyIDEA aims to not bind you to any decision of the authentication protocol 
+ or it does not dictate you where your user information should be stored.
+ This is achieved by its totally modular architecture.
+ privacyIDEA is not only open as far as its modular architecture is concerned.
+ But privacyIDEA is completely licensed under the AGPLv3.
+ 

@@ -1,0 +1,17 @@
+[Default]
+@!@
+hostname = baseConfig.get('hostname')
+domainname = baseConfig.get('domainname')
+url = baseConfig.get('privacyidea/radius/url', 'https://%s.%s/privacyidea' % (hostname, domainname))
+realm = baseConfig.get('privacyidea/radius/realm', '')
+
+radius_config = '''
+URL = %s/validate/check
+REALM = %s
+''' % (url, realm)
+
+if baseConfig.get('privacyidea/radius/enable'):
+        print radius_config
+
+@!@
+

@@ -1,0 +1,35 @@
+Type: multifile
+Multifile: opt/privacyIDEA/rlm_perl.ini
+
+Type: multifile
+Multifile: etc/freeradius/users
+
+Type: multifile
+Multifile: etc/freeradius/sites-available/privacyidea
+
+Type: subfile
+Multifile: etc/freeradius/sites-available/privacyidea
+Subfile: etc/freeradius/sites-available/privacyidea.d/10netknights-header
+
+Type: subfile
+Multifile: etc/freeradius/sites-available/privacyidea
+Subfile: etc/freeradius/sites-available/privacyidea.d/45netknights-otp
+Variables: ^privacyidea/radius/enable
+
+Type: subfile
+Multifile: opt/privacyIDEA/rlm_perl.ini
+Subfile: opt/privacyIDEA/rlm_perl.ini.d/45netknights-otp
+Variables: ^privacyidea/radius/.*
+
+Type: subfile
+Multifile: opt/privacyIDEA/rlm_perl.ini
+Subfile: opt/privacyIDEA/rlm_perl.ini.d/10netknights-header
+
+Type: subfile
+Multifile: etc/freeradius/users
+Subfile: etc/freeradius/users.d/45netknights-otp
+Variables: ^privacyidea/radius/enable
+
+Type: subfile
+Multifile: etc/freeradius/users
+Subfile: etc/freeradius/users.d/10netknights-header

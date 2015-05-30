@@ -1,0 +1,39 @@
+#!/bin/sh
+# see: dh_installdeb(1)
+
+set -e
+
+# source debconf library
+. /usr/share/debconf/confmodule
+
+# Source dbconfig-common functions
+if [ -f /usr/share/dbconfig-common/dpkg/postinst.pgsql  ]; then
+  . /usr/share/dbconfig-common/dpkg/postinst.pgsql
+fi
+
+cat > /etc/freeradius/modules/perl << HERE
+perl {
+    module = /usr/share/privacyidea/privacyidea_radius.pm
+}
+HERE
+
+SERVICE="privacyIDEA"
+eval "$(ucr shell)"
+domainname=$(ucr get domainname)
+
+# get count
+count=`univention-ldapsearch '(univentionService=privacyIDEA)' displayName | grep ^displayName | wc -l`
+
+if [ $count -eq 1 ]; then
+    # get hostname
+    hostname=`univention-ldapsearch '(univentionService=privacyIDEA)' displayName | grep ^displayName | cut -f2 -d':' | sed -es/\ //g`
+    ucr set privacyidea/radius/url=https://$hostname.$domainname/privacyidea
+fi
+
+mkdir -p /opt/privacyIDEA
+
+#DEBHELPER#
+
+db_stop
+
+exit 0

@@ -1,0 +1,17 @@
+[privacyidea/radius/url]
+Description[en]=The URL of the privacyIDEA system, e.g. "https://yourserver"
+Description[de]=Die URL des privacyIDEA Sytems. Bspw "https://IhrServer"
+Type=str
+Categories=privacyidea
+
+[privacyidea/radius/realm]
+Description[en]=The realm, the users should authenticate in.
+Description[de]=Der Realm, in dem sich die Benutzer anmelden.
+Type=str
+Categories=privacyidea
+
+[privacyidea/radius/enable]
+Description[en]=Enable OTP authentication
+Description[de]=OTP Authentisierung aktivieren
+Type=str
+Categories=privacyidea
