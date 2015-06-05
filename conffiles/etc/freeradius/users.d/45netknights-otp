@@ -1,5 +1,5 @@
 @!@
-if baseConfig.get('privacyidea/radius/enable'):
+if baseConfig.get('privacyidea/radius/enable') == "1":
 	print "DEFAULT Auth-Type := Perl"
 else:
 	print '''
