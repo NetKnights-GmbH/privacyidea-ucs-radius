@@ -6,19 +6,14 @@ set -e
 # source debconf library
 . /usr/share/debconf/confmodule
 
-# Source dbconfig-common functions
-if [ -f /usr/share/dbconfig-common/dpkg/postinst.pgsql  ]; then
-  . /usr/share/dbconfig-common/dpkg/postinst.pgsql
-fi
+# restore the users file
+mv /etc/freeradius/users.privacyidea /etc/freeradius/users || true
 
-ucr unset privacyidea/radius/enable
 rm -f /etc/freeradius/sites-enabled/privacyidea
 ln -sf /etc/freeradius/sites-available/inner-tunnel /etc/freeradius/sites-enabled/
 ln -sf /etc/freeradius/sites-available/default /etc/freeradius/sites-enabled/
 
-# restore the users file
-mv /etc/freeradius/users.privacyidea /etc/freeradius/users || true
-#service freeradius restart
+ucr unset privacyidea/radius/enable
 
 #DEBHELPER#
 exit 0
