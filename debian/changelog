@@ -1,3 +1,9 @@
+privacyidea-ucs-radius (2.4~dev1) wheezy; urgency=low
+
+  * Improve REALM handling
+
+ -- NetKnights GmbH <info@netknights.it>  Thu, 25 Jun 2015 17:30:00 +0200
+
 privacyidea-ucs-radius (2.3-1) wheezy; urgency=low
 
   * Iinital package
