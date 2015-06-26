@@ -1,4 +1,4 @@
-privacyidea-ucs-radius (2.4~dev1) wheezy; urgency=low
+privacyidea-ucs-radius (2.4-1) wheezy; urgency=low
 
   * Improve REALM handling
 
