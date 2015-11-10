@@ -15,7 +15,6 @@ clean:
 builddeb:
 	make clean
 	mkdir -p DEBUILD/privacyidea-ucs-radius.org
-	cp ../privacyidea/authmodules/FreeRADIUS/privacyidea_radius.pm deploy || true
 	cp -r ${SRCDIRS} ${SRCFILES} DEBUILD/privacyidea-ucs-radius.org || true
 	# We need to touch this, so that our config files 
 	# are written to /etc
