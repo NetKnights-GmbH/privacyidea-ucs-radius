@@ -1,3 +1,10 @@
+privacyidea-ucs-radius (2.20.1-1) jessie; urgency=low
+
+  * Add User data mapping
+  * Add challenge response
+
+ -- NetKnights GmbH <info@netknights.it>  Thu, 23 Nov 2015 17:30:00 +0200
+
 privacyidea-ucs-radius (2.4-1) wheezy; urgency=low
 
   * Improve REALM handling
