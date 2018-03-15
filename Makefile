@@ -3,7 +3,7 @@ info:
 	@echo "make builddeb     - build .deb file locally"
 	
 #VERSION=1.3~dev5
-VERSION=2.20.1
+VERSION=2.21.4
 SRCDIRS=deploy debian conffiles
 SRCFILES=Makefile
 

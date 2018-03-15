@@ -1,9 +1,16 @@
+privacyidea-ucs-radius (2.21.4-1) jessie; urgency=low
+
+  * Allow regular expressions in response
+  * Allow multivalue attribute mapping
+
+ -- NetKnights GmbH <info@netknights.it>  Thu, 15 Mar 2018 12:00:00 +0200
+
 privacyidea-ucs-radius (2.20.1-1) jessie; urgency=low
 
   * Add User data mapping
   * Add challenge response
 
- -- NetKnights GmbH <info@netknights.it>  Thu, 23 Nov 2015 17:30:00 +0200
+ -- NetKnights GmbH <info@netknights.it>  Thu, 23 Nov 2017 17:30:00 +0200
 
 privacyidea-ucs-radius (2.4-1) wheezy; urgency=low
 
