@@ -2,19 +2,34 @@ Type: multifile
 Multifile: opt/privacyIDEA/rlm_perl.ini
 
 Type: multifile
-Multifile: etc/freeradius/users
+Multifile: etc/freeradius/3.0/users
 
 Type: multifile
-Multifile: etc/freeradius/sites-available/privacyidea
+Multifile: etc/freeradius/3.0/sites-available/privacyidea
 
 Type: subfile
-Multifile: etc/freeradius/sites-available/privacyidea
-Subfile: etc/freeradius/sites-available/privacyidea.d/10netknights-header
+Multifile: etc/freeradius/3.0/sites-available/privacyidea
+Subfile: etc/freeradius/3.0/sites-available/privacyidea.d/10netknights-header
 
 Type: subfile
-Multifile: etc/freeradius/sites-available/privacyidea
-Subfile: etc/freeradius/sites-available/privacyidea.d/45netknights-otp
+Multifile: etc/freeradius/3.0/sites-available/privacyidea
+Subfile: etc/freeradius/3.0/sites-available/privacyidea.d/45netknights-otp
 Variables: ^privacyidea/radius/enable
+
+Type: multifile
+Multifile: etc/freeradius/3.0/mods-available/perl
+
+Type: subfile
+Multifile: etc/freeradius/3.0/mods-available/perl
+Subfile: etc/freeradius/3.0/mods-available/perl.d/10netknights-header
+
+Type: subfile
+Multifile: etc/freeradius/3.0/mods-available/perl
+Subfile: etc/freeradius/3.0/mods-available/perl.d/45netknights-otp
+
+Type: subfile
+Multifile: etc/freeradius/3.0/mods-available/perl
+Subfile: etc/freeradius/3.0/mods-available/perl.d/90netknights-footer
 
 Type: subfile
 Multifile: opt/privacyIDEA/rlm_perl.ini
@@ -26,14 +41,14 @@ Multifile: opt/privacyIDEA/rlm_perl.ini
 Subfile: opt/privacyIDEA/rlm_perl.ini.d/10netknights-header
 
 Type: subfile
-Multifile: etc/freeradius/users
-Subfile: etc/freeradius/users.d/45netknights-otp
+Multifile: etc/freeradius/3.0/users
+Subfile: etc/freeradius/3.0/users.d/45netknights-otp
 Variables: ^privacyidea/radius/enable
 
 Type: subfile
-Multifile: etc/freeradius/users
-Subfile: etc/freeradius/users.d/10netknights-header
+Multifile: etc/freeradius/3.0/users
+Subfile: etc/freeradius/3.0/users.d/10netknights-header
 
 Type: script
-Script: etc/freeradius/sites-enabled/link_privacyidea
+Script: etc/freeradius/3.0/sites-enabled/link_privacyidea
 Variables: ^privacyidea/radius/enable

@@ -9,9 +9,10 @@ set -e
 # restore the users file
 mv /etc/freeradius/users.privacyidea /etc/freeradius/users || true
 
-rm -f /etc/freeradius/sites-enabled/privacyidea
-ln -sf /etc/freeradius/sites-available/inner-tunnel /etc/freeradius/sites-enabled/
-ln -sf /etc/freeradius/sites-available/default /etc/freeradius/sites-enabled/
+rm -f /etc/freeradius/3.0/sites-enabled/privacyidea
+rm -f /etc/freeradius/3.0/mods-enabled/perl
+ln -sf /etc/freeradius/3.0/sites-available/inner-tunnel /etc/freeradius/3.0/sites-enabled/
+ln -sf /etc/freeradius/3.0/sites-available/default /etc/freeradius/3.0/sites-enabled/
 
 ucr unset privacyidea/radius/enable
 

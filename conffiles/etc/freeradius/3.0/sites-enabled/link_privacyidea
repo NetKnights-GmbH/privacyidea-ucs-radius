@@ -1,0 +1,26 @@
+#!/bin/bash
+
+enable_otp() {
+	rm -f  /etc/freeradius/3.0/sites-enabled/default
+	rm -f  /etc/freeradius/3.0/sites-enabled/inner-tunnel
+	ln -sf /etc/freeradius/3.0/sites-available/privacyidea /etc/freeradius/3.0/sites-enabled/
+	ln -sf /etc/freeradius/3.0/mods-available/perl /etc/freeradius/3.0/mods-enabled/
+	rm -f  /etc/freeradius/3.0/mods-enabled/eap
+}
+
+disable_otp() {
+	rm -f  /etc/freeradius/3.0/sites-enabled/privacyidea
+	rm -f  /etc/freeradius/3.0/mods-enabled/perl
+	ln -sf /etc/freeradius/3.0/sites-available/inner-tunnel /etc/freeradius/3.0/sites-enabled/
+	ln -sf /etc/freeradius/3.0/sites-available/default /etc/freeradius/3.0/sites-enabled/
+	ln -sf /etc/freeradius/3.0/mods-available/eap /etc/freeradius/3.0/mods-enabled/
+}
+
+
+ENABLED=`ucr get privacyidea/radius/enable`
+if [ "$ENABLED" = "1" ]; then
+	enable_otp
+else
+	disable_otp
+fi
+service freeradius restart

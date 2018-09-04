@@ -1,11 +1,13 @@
 info:
 	@echo "make clean        - remove all automatically created files"
+	@echo "make update	 - update the FreeRADIUS module fromg github"
 	@echo "make builddeb     - build .deb file locally"
 	
 #VERSION=1.3~dev5
-VERSION=2.21.4
+VERSION=2.23.1
 SRCDIRS=deploy debian conffiles
 SRCFILES=Makefile
+BUILDER_IP=10.0.2.56
 
 clean:
 	rm -fr DEBUILD
@@ -26,8 +28,8 @@ builddeb:
 	################# Build
 	(cd DEBUILD/privacyidea-ucs-radius.org; debuild --no-lintian -uc -us)
 
-sync-forth:
-	rsync -r ../privacyidea-ucs-radius root@172.16.200.147:
+sync-up:
+	rsync -r ../privacyidea-ucs-radius root@${BUILDER_IP}:
 
-sync-back:
-	rsync -r root@172.16.200.147:privacyidea-ucs-radius .
+sync-down:
+	rsync -r root@${BUILDER_IP}:privacyidea-ucs-radius/* .
