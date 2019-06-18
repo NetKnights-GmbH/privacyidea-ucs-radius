@@ -1,3 +1,14 @@
+privacyidea-ucs-radius (3.1-1) squeeze; urgency=low
+
+  * privacyIDEA RADIUS for UCS 4.4
+  * fix password with NULL byte
+  * return RLM_MODULE_FAIL if not OK 200
+  * Use generic subdir for JSON response -> more flexible mapping
+  * Support FreeRADIUS 3
+  * Fix JSON decode
+
+ -- NetKnights GmbH <info@netknights.it>  Tue, 18 Jun 2019 12:00:00 +0200
+
 privacyidea-ucs-radius (2.23.1-1) squeeze; urgency=low
 
   * Make privacyIDEA RADIUS available for UCS 4.3

@@ -27,4 +27,4 @@ On the UCS do:
 
 Then you can do:
 
-    make sync-up remote-build sync-down
+    VERSION=3.1 make sync-up remote-build sync-down
