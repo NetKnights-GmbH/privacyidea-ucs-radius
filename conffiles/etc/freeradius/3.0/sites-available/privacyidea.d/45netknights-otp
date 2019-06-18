@@ -26,6 +26,12 @@ authorize {
         expiration
         logintime
         pap
+	perl
+	if (ok || updated) {
+		update control {
+                	Auth-Type := Perl
+                 }
+	}
 }
 
 
