@@ -24,7 +24,7 @@ builddeb:
 	# We need to touch this, so that our config files 
 	# are written to /etc
 	cp LICENSE DEBUILD/privacyidea-ucs-radius.org/debian/copyright
-	(cd DEBUILD; tar -zcf privacyidea-ucs-radius_${VERSION}.orig.tar.gz --exclude=privacyidea.org/debian privacyidea-ucs-radius.org)
+	(cd DEBUILD; tar -zcf privacyidea-ucs-radius_${VERSION}.orig.tar.gz --exclude=debian/* privacyidea-ucs-radius.org)
 	################# Build
 	(cd DEBUILD/privacyidea-ucs-radius.org; debuild --no-lintian -uc -us)
 
