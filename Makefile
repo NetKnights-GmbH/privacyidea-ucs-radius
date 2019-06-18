@@ -7,7 +7,8 @@ info:
 VERSION=2.23.1
 SRCDIRS=deploy debian conffiles
 SRCFILES=Makefile
-BUILDER_IP=10.0.2.56
+# UCS 4.4
+BUILDER_IP=10.0.2.59
 
 clean:
 	rm -fr DEBUILD
@@ -32,7 +33,7 @@ sync-up:
 	rsync -r ../privacyidea-ucs-radius root@${BUILDER_IP}:
 
 remote-build:
-	ssh root@10.0.2.56 "cd privacyidea-ucs-radius; make builddeb"  
+	ssh root@${BUILDER_IP} "cd privacyidea-ucs-radius; make builddeb"  
 
 sync-down:
 	rsync -r root@${BUILDER_IP}:privacyidea-ucs-radius/* .

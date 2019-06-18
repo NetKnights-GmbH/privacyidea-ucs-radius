@@ -1,3 +1,0 @@
-[submodule "deploy/FreeRADIUS"]
-	path = deploy/FreeRADIUS
-	url = https://github.com/privacyidea/FreeRADIUS.git
