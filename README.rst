@@ -24,3 +24,7 @@ On the UCS do:
     univention-install build-essential debhelper
     univention-install ucslint
     univention-install univention-config-dev
+
+Then you can do:
+
+    make sync-up remote-build sync-down

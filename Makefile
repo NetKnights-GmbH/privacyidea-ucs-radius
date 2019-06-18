@@ -31,5 +31,8 @@ builddeb:
 sync-up:
 	rsync -r ../privacyidea-ucs-radius root@${BUILDER_IP}:
 
+remote-build:
+	ssh root@10.0.2.56 "cd privacyidea-ucs-radius; make builddeb"  
+
 sync-down:
 	rsync -r root@${BUILDER_IP}:privacyidea-ucs-radius/* .
